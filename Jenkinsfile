@@ -11,5 +11,6 @@ node {
 		echo "CHANGE_BRANCH: ${env.CHANGE_BRANCH}"
 		echo "CHANGE_FORK: ${env.CHANGE_FORK}"
 		echo "BUILD_NUMBER: ${env.BUILD_NUMBER}"
+		echo "BUILD_URL: ${env.BUILD_URL}"
 	}
 }
