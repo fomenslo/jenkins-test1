@@ -15,6 +15,9 @@ node {
 		echo "BUILD_NUMBER: ${env.BUILD_NUMBER}"
 		echo "BUILD_URL: ${env.BUILD_URL}"
 
+		git(branch: env.BRANCH_NAME, changelog: false, credentialsId: 'devops-mule-bae-user', 
+        		poll: false, url: 'https://github.com/fomenslo/jenkins-test1.git')
+
 		commitInfo = sh (
 		      script: 'git --no-pager show -s --format=\'%h|%an|%ae|%s\'',
 		      returnStdout: true
