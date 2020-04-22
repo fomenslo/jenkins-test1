@@ -1,3 +1,5 @@
+
+
 node {
 	stage('PrintAll') {
 		echo "BRANCH_NAME: ${env.BRANCH_NAME}"
@@ -12,5 +14,11 @@ node {
 		echo "CHANGE_FORK: ${env.CHANGE_FORK}"
 		echo "BUILD_NUMBER: ${env.BUILD_NUMBER}"
 		echo "BUILD_URL: ${env.BUILD_URL}"
+
+		commitInfo = sh (
+		      script: 'git --no-pager show -s --format=\'%h|%an|%ae|%s\'',
+		      returnStdout: true
+		).trim()
+		echo "Commit Info: ${commitInfo}"
 	}
 }
