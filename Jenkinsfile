@@ -1,3 +1,2 @@
-@Library('my-shared-library') _
-
+@Library('ms-autobuild-library') _
 build()
